@@ -5,11 +5,17 @@ import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { GithubUserDetailsComponent } from './components/github-user-details/github-user-details.component';
+import { GithubUserRepoDetailsComponent } from './components/github-user-repo-details/github-user-repo-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomePageComponent,
+    GithubUserDetailsComponent,
+    GithubUserRepoDetailsComponent
   ],
   imports: [
     BrowserModule,
