@@ -3,7 +3,9 @@
     <img src="../../../assets/img/logov.svg" alt="logo" />
   </div>
   <form>
-    <input type="text" class="searchInput " placeholder="Enter user name" />
-    <button class="btn searchBtn">Search</button>
-  </form>  width: 30%;
+    <input type="text" class="searchInput" placeholder="Enter user name" />
+    <button class="btn searchBtn" routerLink="/searchUser">Search</button>
+  </form>
+  <app-github-user-details hidden></app-github-user-details>
+  <app-github-user-repo-details hidden></app-github-user-repo-details>
 </div>

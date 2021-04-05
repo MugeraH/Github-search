@@ -14,8 +14,8 @@ export class HomePageComponent implements OnInit {
   constructor(private dataService: GithubDataService) {}
 
   ngOnInit(): void {
-    this.getUserData();
-    this.getUserRepoData();
+    // this.getUserData();
+    // this.getUserRepoData();
   }
 
   getUserData() {
