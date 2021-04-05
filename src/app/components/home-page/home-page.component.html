@@ -2,8 +2,17 @@
   <div class="logo">
     <img src="../../../assets/img/logov.svg" alt="logo" />
   </div>
-  <form>
-    <input type="text" class="searchInput" placeholder="Enter user name" />
+  <form
+    #searchForm="ngForm"
+    (ngSubmit)="searchForm.form.valid && getUserData()"
+  >
+    <input
+      type="text"
+      class="searchInput"
+      placeholder="Enter user name"
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+    />
     <button class="btn searchBtn" routerLink="/searchUser">Search</button>
   </form>
   <app-github-user-details hidden></app-github-user-details>
