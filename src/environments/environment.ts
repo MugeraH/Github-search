@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  accessToken: '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',
+  accessToken: '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',
 };
 
 /*
@@ -17,4 +17,10 @@ export const environment = {
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
+// https://api.github.com/users/mugerah?access_token= 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
 
+// https://api.github.com/users/hmugera?access_token=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 
+
+// https://api.github.com/users/mugerah?access_token=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
+
+// https://api.github.com/users/mugerah/repos?order=created&sort=asc?access_token=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
