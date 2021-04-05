@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 240px;
+}
+
+.wrapper .logo img {
+  height: 300px;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+input[type="email"],
+input[type="email"]:focus,
+textarea[type="text"],
+textarea[type="text"]:focus {
+  background: rgb(1, 1, 1);
+  border: rgb(1, 1, 1);
+  border-bottom: 4px solid #ff0000;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  width: 350px;
+}
+
+.searchBtn {
+  margin-top: 30px;
+  padding: 18px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  background-color: #ff0000;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+form .searchInput {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}

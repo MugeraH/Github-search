@@ -10,11 +10,11 @@ import { Users } from '../../users';
 export class HomePageComponent implements OnInit {
   userData: Users[];
   userRepoData: Users[];
-  searchTerm: string = 'hmugera';
+  searchTerm: string = 'MugeraH';
   constructor(private dataService: GithubDataService) {}
 
   ngOnInit(): void {
-     this.getUserData();
+    this.getUserData();
     this.getUserRepoData();
   }
 
