@@ -8,6 +8,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { GithubUserDetailsComponent } from './components/github-user-details/github-user-details.component';
 import { GithubUserRepoDetailsComponent } from './components/github-user-repo-details/github-user-repo-details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GithubUserRepoDetailsComponent } from './components/github-user-repo-de
     NotFoundComponent,
     HomePageComponent,
     GithubUserDetailsComponent,
-    GithubUserRepoDetailsComponent
+    GithubUserRepoDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

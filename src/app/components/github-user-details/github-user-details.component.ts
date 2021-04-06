@@ -9,7 +9,7 @@ import { GithubDataService } from '../../services/github-data.service';
   styleUrls: ['./github-user-details.component.css'],
 })
 export class GithubUserDetailsComponent implements OnInit {
-  userName: string;
+  userName: any;
   userData: Users[];
   constructor(
     private router: ActivatedRoute,
@@ -24,7 +24,7 @@ export class GithubUserDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    let userName = this.router.snapshot.paramMap.get('login');
+    this.userName = this.router.snapshot.paramMap.get('login');
 
     this.dataService.getUserData(this.userName).subscribe((data) => {
       this.userData = data;

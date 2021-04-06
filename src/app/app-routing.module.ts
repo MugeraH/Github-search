@@ -6,9 +6,10 @@ import { GithubUserDetailsComponent } from './components/github-user-details/git
 import { GithubUserRepoDetailsComponent } from './components/github-user-repo-details/github-user-repo-details.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomePageComponent },
-  { pathMatch: 'full', redirectTo: 'home', path: '' },
   { path: 'searchUser/:login', component: GithubUserDetailsComponent },
+  { path: 'searchUser', component: GithubUserDetailsComponent },
   { path: 'searchUserRepositories', component: GithubUserRepoDetailsComponent },
   { path: '**', component: NotFoundComponent },
 ];
