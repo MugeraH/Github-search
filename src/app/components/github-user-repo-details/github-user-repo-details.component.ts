@@ -17,7 +17,6 @@ export class GithubUserRepoDetailsComponent implements OnInit {
   getUserData() {
     this.dataService.getRepoData(this.userName).subscribe((data) => {
       this.repoData = data;
-      console.log(data);
     });
   }
 }
