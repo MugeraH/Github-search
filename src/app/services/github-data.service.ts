@@ -15,7 +15,8 @@ export class GithubDataService {
 
   getUserData(username: string): Observable<any> {
     return this.http.get(
-      `https://api.github.com/users/${username}?access_token=${this.token}`
+      // `https://api.github.com/users/${username}?access_token=${this.token}`
+      `https://api.github.com/users/${username}`
     );
   }
 

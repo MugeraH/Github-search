@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubDataService } from '../../services/github-data.service';
 import { Users } from '../../users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,10 +9,11 @@ import { Users } from '../../users';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  userData: Users[];
+  userData: Users;
+  myData:{}
   userRepoData: Users[];
-  searchTerm: string = 'MugeraH';
-  constructor(private dataService: GithubDataService) {}
+  searchTerm: string = 'hmugera';
+  constructor(private dataService: GithubDataService, private router: Router) {}
 
   ngOnInit(): void {
     // this.getUserData();
@@ -20,9 +22,9 @@ export class HomePageComponent implements OnInit {
 
   getUserData() {
     this.dataService.getUserData(this.searchTerm).subscribe((data) => {
-      this.userData = data;
-
-      console.log(this.userData);
+       this.userData = data;
+      this.router.navigate(['/searchUser', this.userData.login]);
+      // console.log(this.userData);
     });
   }
   getUserRepoData() {

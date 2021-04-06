@@ -8,7 +8,7 @@ import { GithubUserRepoDetailsComponent } from './components/github-user-repo-de
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { pathMatch: 'full', redirectTo: 'home', path: '' },
-  { path: 'searchUser', component: GithubUserDetailsComponent },
+  { path: 'searchUser/:login', component: GithubUserDetailsComponent },
   { path: 'searchUserRepositories', component: GithubUserRepoDetailsComponent },
   { path: '**', component: NotFoundComponent },
 ];
