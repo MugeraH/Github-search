@@ -7,8 +7,8 @@ export class Users {
     public url: any,
     public login: string,
     public html_url: any,
-    public avatar_url: any,
     public loaction: any,
-    public bio: any
+    public bio: any,
+    public avatar_url?: any
   ) {}
 }

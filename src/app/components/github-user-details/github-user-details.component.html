@@ -24,15 +24,15 @@
 
     <div class="user-details-wrapper" *ngIf="showUserDetails">
       <div class="user_avatar">
-        <img class="avatar" src="{{ userData.avatar_url }}" alt="" />
+        <img class="avatar" src="{{ userData?.avatar_url }}" alt="" />
       </div>
 
       <div class="user_detail">
         <div class="user_name text-center">
-          {{ userData.login }}
+          {{ userData?.login }}
         </div>
         <div class="user_bio text-center">
-          {{ userData.bio }}
+          {{ userData?.bio }}
         </div>
         <div class="user_info">
           <div
@@ -42,7 +42,7 @@
           >
             >
             <img src="../../../assets/img/followers.svg" alt="" />
-            <span>{{ userData.followers }}</span>
+            <span>{{ userData?.followers }}</span>
           </div>
           <div
             class="info"
@@ -51,7 +51,7 @@
           >
             >
             <img src="../../../assets/img/following.svg" alt="" />
-            <span>{{ userData.following }}</span>
+            <span>{{ userData?.following }}</span>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <h4>Total Repositories</h4>
         <div class="repoData">
           <img src="../../../assets/img/repository.svg" alt="" />
-          <span>{{ userData.public_repos }}</span>
+          <span>{{ userData?.public_repos }}</span>
         </div>
       </div>
     </div>

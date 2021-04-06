@@ -16,7 +16,7 @@ export const environment = {
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
-// https://api.github.com/users/mugerah?access_token= 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
+// https://api.github.com/users/mugerah?access_token=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
 
 // https://api.github.com/users/hmugera?access_token=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
 
