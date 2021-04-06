@@ -22,7 +22,7 @@
       </form>
     </div>
 
-    <div class="user-details-wrapper" *ngIf="showUserDetails">
+    <div class="user-details-wrapper" *ngIf="showUserDetails && !isLoading">
       <div class="user_avatar">
         <img class="avatar" src="{{ userData?.avatar_url }}" alt="" />
       </div>
@@ -64,5 +64,7 @@
         </div>
       </div>
     </div>
+
+    <app-loader *ngIf="isLoading" class="mt-5"></app-loader>
   </div>
 </div>

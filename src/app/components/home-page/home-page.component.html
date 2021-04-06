@@ -5,6 +5,7 @@
   <form
     #searchForm="ngForm"
     (ngSubmit)="searchForm.form.valid && getUserData()"
+    *ngIf="!isLoading"
   >
     <input
       type="text"
@@ -15,4 +16,6 @@
     />
     <button class="btn searchBtn">Search</button>
   </form>
+
+  <app-loader *ngIf="isLoading"></app-loader>
 </div>

@@ -13,20 +13,16 @@ export class HomePageComponent implements OnInit {
   myData: {};
   userRepoData: Users[];
   searchTerm: string = '';
+  isLoading: boolean = false;
   constructor(private dataService: GithubDataService, private router: Router) {}
 
   ngOnInit(): void {}
 
   getUserData() {
+    this.isLoading = true;
     this.dataService.getUserData(this.searchTerm).then((data) => {
-      this.userData = data; 
+      this.userData = data;
       this.router.navigate(['/searchUser', this.userData.login]);
     });
   }
-  // getUserRepoData() {
-  //   this.dataService.getRepoData(this.searchTerm).then((data) => {
-  //     this.userRepoData = data;
-  //     console.log(this.userRepoData);
-  //   });
-  // }
 }

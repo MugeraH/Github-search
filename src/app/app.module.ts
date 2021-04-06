@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateCountPipe } from './date-count.pipe';
 import { HighlightHoverDirective } from './highlight-hover.directive';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HighlightHoverDirective } from './highlight-hover.directive';
     GithubUserRepoDetailsComponent,
     NavbarComponent,
     DateCountPipe,
-    HighlightHoverDirective
+    HighlightHoverDirective,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

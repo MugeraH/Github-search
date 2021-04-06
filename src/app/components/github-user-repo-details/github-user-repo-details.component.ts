@@ -10,12 +10,16 @@ import { Repo } from '../../repo';
 export class GithubUserRepoDetailsComponent implements OnInit {
   userName: string = '';
   repoData: Repo[];
+
+  isLoading: boolean = false;
   constructor(private dataService: GithubDataService) {}
 
   ngOnInit(): void {}
 
   getUserData() {
+    this.isLoading = true;
     this.dataService.getRepoData(this.userName).then((data) => {
+      this.isLoading = false;
       this.repoData = data;
     });
   }
