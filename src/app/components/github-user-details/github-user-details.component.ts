@@ -32,7 +32,6 @@ export class GithubUserDetailsComponent implements OnInit {
     // this.getUserData();
     this.userNameLink = this.router.snapshot.paramMap.get('login');
     this.dataService.getUserData(this.userNameLink).subscribe((data) => {
-      this.showUserDetails = true;
       this.userData = data;
       console.log(this.userData);
     });

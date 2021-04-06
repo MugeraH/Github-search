@@ -1,0 +1,97 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.repo_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repo-container {
+  margin-top: 90px;
+  background-color: rgb(27, 27, 27);
+  border-radius: 5px;
+  padding: 15px;
+  color: #fff;
+  width: 300px;
+  margin-right: 10px;
+}
+
+form {
+  width: 500px;
+  margin: 10px auto;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+input[type="email"],
+input[type="email"]:focus,
+textarea[type="text"],
+textarea[type="text"]:focus {
+  background: transparent;
+  border: rgb(1, 1, 1);
+  border-bottom: 4px solid #ff0000;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  padding-bottom: 10px;
+}
+
+form input {
+  width: 80%;
+  padding-left: 20px;
+}
+
+form .searchBtn {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.repo_name {
+  margin: 10px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.repo_description {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.repo_info {
+  margin: 15px 0px;
+  display: flex;
+}
+
+.repo_info .info {
+  margin-right: 20px;
+}
+
+.info img {
+  margin-right: 6px;
+  height: 20px;
+}
+
+.repo_date-info {
+  font-size: 14px;
+  margin: 20px 0px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -100,7 +100,7 @@ form .searchBtn {
 .user_repoData {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 19px;
   align-items: center;
 }
 
@@ -108,6 +108,7 @@ form .searchBtn {
   color: #fff;
   font-size: 23px;
   font-weight: 600;
+  padding-bottom: 26px;
 }
 .repoData img {
   height: 45px;

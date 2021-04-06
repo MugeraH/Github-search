@@ -35,11 +35,21 @@
           {{ userData.bio }}
         </div>
         <div class="user_info">
-          <div class="info" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+          <div
+            class="info"
+            ngbTooltip="Followers"
+            tooltipClass="my-custom-class"
+          >
+            >
             <img src="../../../assets/img/followers.svg" alt="" />
             <span>{{ userData.followers }}</span>
           </div>
-          <div class="info">
+          <div
+            class="info"
+            ngbTooltip="Followering"
+            tooltipClass="my-custom-class"
+          >
+            >
             <img src="../../../assets/img/following.svg" alt="" />
             <span>{{ userData.following }}</span>
           </div>

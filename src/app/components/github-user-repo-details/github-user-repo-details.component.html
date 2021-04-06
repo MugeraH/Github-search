@@ -1,1 +1,57 @@
-<p>github-user-repo-details works!</p>
+<div class="container">
+  <app-navbar></app-navbar>
+
+  <div class="main-wrapper">
+    <div class="mt-5">
+      <form
+        class="text-center"
+        #searchForm="ngForm"
+        (ngSubmit)="searchForm.form.valid && getUserData()"
+      >
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class=""
+            placeholder="Search User"
+            [(ngModel)]="userName"
+            name="userName"
+          />
+
+          <button class="btn searchBtn">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="wrapper">
+      <div class="repo_wrapper text-center" >
+        <div class="repo-container" *ngFor="let repo of repoData">
+          <div class="repo_name">name</div>
+          <div class="repo_description">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              totam quos laborum odio commodi harum.
+            </p>
+          </div>
+          <div class="repo_info">
+            <div class="info">
+              <img src="../../../assets/img/star.svg" alt="" />
+              <span>data</span>
+            </div>
+            <div class="info">
+              <img src="../../../assets/img/branch.svg" alt="" />
+              <span>data</span>
+            </div>
+            <div class="info">
+              <img src="../../../assets/img/code.svg" alt="" />
+              <span>data</span>
+            </div>
+          </div>
+          <div class="repo_date-info">
+            <div class="date">date</div>
+            <button class="btn btn-outline-secondary">Visit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
