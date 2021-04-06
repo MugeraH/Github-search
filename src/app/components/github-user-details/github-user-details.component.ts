@@ -50,7 +50,6 @@ export class GithubUserDetailsComponent implements OnInit {
       if (data.login === 'null') {
         this.getUserData();
         this.userName = '';
-
         this.isLoading = false;
         return;
       }
