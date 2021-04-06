@@ -10,21 +10,17 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
   userData: Users;
-  myData:{}
+  myData: {};
   userRepoData: Users[];
-  searchTerm: string = 'hmugera';
+  searchTerm: string = '';
   constructor(private dataService: GithubDataService, private router: Router) {}
 
-  ngOnInit(): void {
-    // this.getUserData();
-    // this.getUserRepoData();
-  }
+  ngOnInit(): void {}
 
   getUserData() {
     this.dataService.getUserData(this.searchTerm).subscribe((data) => {
-       this.userData = data;
+      this.userData = data;
       this.router.navigate(['/searchUser', this.userData.login]);
-      // console.log(this.userData);
     });
   }
   getUserRepoData() {
