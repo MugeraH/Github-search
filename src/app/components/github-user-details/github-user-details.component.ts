@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Users } from '../../users';
 import { ActivatedRoute } from '@angular/router';
+import { GithubDataService } from '../../services/github-data.service';
 
 @Component({
   selector: 'app-github-user-details',
@@ -9,12 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GithubUserDetailsComponent implements OnInit {
   userName: string;
+  userData: Users[];
+  constructor(
+    private router: ActivatedRoute,
+    private dataService: GithubDataService
+  ) {}
 
-  constructor(private router: ActivatedRoute) {}
+  getUserData() {
+    this.dataService.getUserData(this.userName).subscribe((data) => {
+      this.userData = data;
+      console.log(this.userData);
+    });
+  }
 
   ngOnInit() {
     let userName = this.router.snapshot.paramMap.get('login');
-    console.log('help');
-    console.log(userName);
+
+    this.dataService.getUserData(this.userName).subscribe((data) => {
+      this.userData = data;
+      console.log(this.userData);
+    });
   }
 }
