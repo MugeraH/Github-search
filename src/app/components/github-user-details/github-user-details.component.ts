@@ -9,24 +9,30 @@ import { GithubDataService } from '../../services/github-data.service';
   styleUrls: ['./github-user-details.component.css'],
 })
 export class GithubUserDetailsComponent implements OnInit {
-  userName: any;
-  userData: Users[];
+  userName: string = '';
+  userNameLink: any;
+  userData: Users;
+  showUserDetails: boolean = false;
   constructor(
     private router: ActivatedRoute,
     private dataService: GithubDataService
   ) {}
 
   getUserData() {
+    this.showUserDetails = true;
     this.dataService.getUserData(this.userName).subscribe((data) => {
       this.userData = data;
+      console.log('help');
+
       console.log(this.userData);
     });
   }
 
   ngOnInit() {
-    this.userName = this.router.snapshot.paramMap.get('login');
-
-    this.dataService.getUserData(this.userName).subscribe((data) => {
+    // this.getUserData();
+    this.userNameLink = this.router.snapshot.paramMap.get('login');
+    this.dataService.getUserData(this.userNameLink).subscribe((data) => {
+      this.showUserDetails = true;
       this.userData = data;
       console.log(this.userData);
     });

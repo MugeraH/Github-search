@@ -9,6 +9,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { GithubUserDetailsComponent } from './components/github-user-details/github-user-details.component';
 import { GithubUserRepoDetailsComponent } from './components/github-user-repo-details/github-user-repo-details.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

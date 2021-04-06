@@ -1,3 +1,58 @@
 <div class="container">
   <app-navbar></app-navbar>
+
+  <div class="wrapper">
+    <div class="mt-5">
+      <form
+        class="text-center"
+        #searchForm="ngForm"
+        (ngSubmit)="searchForm.form.valid && getUserData()"
+      >
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class=""
+            placeholder="Search User"
+            [(ngModel)]="userName"
+            name="userName"
+          />
+
+          <button class="btn searchBtn">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="user-details-wrapper" *ngIf="showUserDetails">
+      <div class="user_avatar">
+        <img class="avatar" src="{{ userData.avatar_url }}" alt="" />
+      </div>
+
+      <div class="user_detail">
+        <div class="user_name text-center">
+          {{ userData.login }}
+        </div>
+        <div class="user_bio text-center">
+          {{ userData.bio }}
+        </div>
+        <div class="user_info">
+          <div class="info" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+            <img src="../../../assets/img/followers.svg" alt="" />
+            <span>{{ userData.followers }}</span>
+          </div>
+          <div class="info">
+            <img src="../../../assets/img/following.svg" alt="" />
+            <span>{{ userData.following }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user_repoData">
+        <h4>Total Repositories</h4>
+        <div class="repoData">
+          <img src="../../../assets/img/repository.svg" alt="" />
+          <span>{{ userData.public_repos }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
