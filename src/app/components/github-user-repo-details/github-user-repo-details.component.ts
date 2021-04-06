@@ -8,8 +8,8 @@ import { Repo } from '../../repo';
   styleUrls: ['./github-user-repo-details.component.css'],
 })
 export class GithubUserRepoDetailsComponent implements OnInit {
-  userName: string = 'deepeters';
-  repoData: [];
+  userName: string = '';
+  repoData: Repo[];
   constructor(private dataService: GithubDataService) {}
 
   ngOnInit(): void {}
@@ -17,9 +17,7 @@ export class GithubUserRepoDetailsComponent implements OnInit {
   getUserData() {
     this.dataService.getRepoData(this.userName).subscribe((data) => {
       this.repoData = data;
-      console.log('help');
-
-      console.log(this.repoData);
+      console.log(data);
     });
   }
 }

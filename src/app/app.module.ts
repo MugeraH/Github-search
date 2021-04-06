@@ -10,6 +10,8 @@ import { GithubUserDetailsComponent } from './components/github-user-details/git
 import { GithubUserRepoDetailsComponent } from './components/github-user-repo-details/github-user-repo-details.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DateCountPipe } from './date-count.pipe';
+import { HighlightHoverDirective } from './highlight-hover.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomePageComponent,
     GithubUserDetailsComponent,
     GithubUserRepoDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    DateCountPipe,
+    HighlightHoverDirective
   ],
   imports: [
     BrowserModule,
