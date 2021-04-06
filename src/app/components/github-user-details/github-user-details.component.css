@@ -40,7 +40,7 @@ form .searchBtn {
 }
 
 .user-details-wrapper {
-  margin: 100px;
+  margin: 70px;
   padding: 30px;
   margin-top: 100px;
   display: flex;
@@ -119,6 +119,22 @@ form .searchBtn {
   font-size: 18px;
 }
 
+@media screen and (max-width: 1090px) {
+  .user-details-wrapper {
+    margin:70px 10px;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .user-details-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:70px 10px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .user-details-wrapper {
     flex-direction: column;
@@ -129,7 +145,7 @@ form .searchBtn {
   form {
     width: 100%;
   }
-  form input{
+  form input {
     width: 300px;
   }
   .searchBtn {
