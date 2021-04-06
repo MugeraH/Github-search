@@ -31,19 +31,26 @@ export class GithubUserDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isLoading = false;
+    this.isLoading = true;
+    this.userName = 'mugerah';
+
     this.userNameLink = this.router.snapshot.paramMap.get('login');
 
     this.dataService.getUserData(this.userNameLink).then((data) => {
       this.showUserDetails = true;
 
       if (data.login === 'null') {
-        this.showUserDetails = false;
+        this.getUserData();
+        this.userName = '';
+
         this.isLoading = false;
         return;
       }
 
       this.userData = data;
+      this.isLoading = false;
+      this.userName = '';
+
       console.log(data);
     });
   }
