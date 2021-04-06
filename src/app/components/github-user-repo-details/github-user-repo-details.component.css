@@ -71,9 +71,9 @@ form .searchBtn {
 }
 
 .repo_description {
-  font-size: 14px;
+  font-size: 16px;
   padding-bottom: 10px;
-  height: 150px;
+  height: 180px;
 }
 
 .repo_info {
@@ -90,8 +90,12 @@ form .searchBtn {
   height: 20px;
 }
 
-.repo_date-info {
+.info span {
   font-size: 14px;
+}
+
+.repo_date-info {
+  font-size: 17px;
   margin: 25px 0px 5px 0px;
   display: flex;
   justify-content: space-between;
@@ -99,7 +103,7 @@ form .searchBtn {
 }
 
 .searchRepoBtn {
-  border: 1px solid red;
+  border: none;
   color: #fff;
   font-size: 17px;
   font-weight: 600;

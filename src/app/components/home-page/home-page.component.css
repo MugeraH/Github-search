@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 240px;
+  margin-top: 200px;
 }
 
 .wrapper .logo img {
@@ -35,7 +35,7 @@ form {
   margin-top: 30px;
   padding: 18px;
   color: #fff;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   background-color: #ff0000;
   outline: none;

@@ -13,21 +13,6 @@ export class GithubDataService {
 
   constructor(private http: HttpClient) {}
 
-  //   let promise = new Promise((resolve,reject)=>{
-  //     this.users = [];
-  //     this.http.get<ApiResponse>(searchEndpoint).toPromise().then(
-  //       (results)=>{
-  //       this.users.push(results);
-  //       console.log(results)
-  //       resolve();
-  //     },error=>{
-
-  //       reject(error);
-  //     }
-  //     )
-  //   })
-  //   return promise;
-  // }
 
   getUserData(username: string) {
     return this.http
