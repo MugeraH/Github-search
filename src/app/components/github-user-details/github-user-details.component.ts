@@ -10,6 +10,7 @@ import { GithubDataService } from '../../services/github-data.service';
 })
 export class GithubUserDetailsComponent implements OnInit {
   userName: string = '';
+  isError: boolean = false;
   userNameLink: any = 'mugerah';
   userData: Users;
   showUserDetails: boolean = false;
@@ -21,13 +22,20 @@ export class GithubUserDetailsComponent implements OnInit {
   ) {}
 
   getUserData() {
+    if (this.userName === '') {
+      this.isLoading = false;
+      this.isError = true;
+      return;
+    }
     this.showUserDetails = true;
     this.isLoading = true;
     this.dataService.getUserData(this.userName).then((data) => {
       this.isLoading = false;
+      this.isError = false;
       this.userData = data;
       console.log(data.login);
     });
+    this.userName = '';
   }
 
   ngOnInit() {

@@ -9,6 +9,7 @@ import { Repo } from '../../repo';
 })
 export class GithubUserRepoDetailsComponent implements OnInit {
   userName: string = '';
+  isError:boolean= false
   repoData: Repo[];
 
   isLoading: boolean = false;
@@ -18,9 +19,17 @@ export class GithubUserRepoDetailsComponent implements OnInit {
 
   getUserData() {
     this.isLoading = true;
+
+    if (this.userName === '') {
+      this.isLoading = false;
+      this.isError= true
+    }
+
     this.dataService.getRepoData(this.userName).then((data) => {
       this.isLoading = false;
+      this.isError=false
       this.repoData = data;
     });
+    this.userName = '';
   }
 }

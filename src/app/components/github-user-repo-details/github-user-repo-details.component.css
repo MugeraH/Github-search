@@ -112,6 +112,9 @@ form .searchBtn {
   background-color: red;
   color: #fff;
 }
+.error {
+  color: red;
+}
 
 @media screen and (max-width: 600px) {
   form {

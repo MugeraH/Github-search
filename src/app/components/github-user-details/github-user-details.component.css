@@ -119,9 +119,13 @@ form .searchBtn {
   font-size: 18px;
 }
 
+.error {
+  color: #ff0000;
+}
+
 @media screen and (max-width: 1090px) {
   .user-details-wrapper {
-    margin:70px 10px;
+    margin: 70px 10px;
     gap: 10px;
   }
 }
@@ -131,7 +135,7 @@ form .searchBtn {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin:70px 10px;
+    margin: 70px 10px;
   }
 }
 
