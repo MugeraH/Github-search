@@ -9,7 +9,7 @@ import { GithubDataService } from '../../services/github-data.service';
   styleUrls: ['./github-user-details.component.css'],
 })
 export class GithubUserDetailsComponent implements OnInit {
-  userName: string = 'mugerah';
+  userName: string = '';
   userNameLink: any = 'mugerah';
   userData: Users;
   showUserDetails: boolean = false;
@@ -22,6 +22,7 @@ export class GithubUserDetailsComponent implements OnInit {
     this.showUserDetails = true;
     this.dataService.getUserData(this.userName).subscribe((data) => {
       this.userData = data;
+      console.log(data.login);
     });
   }
 
@@ -29,7 +30,13 @@ export class GithubUserDetailsComponent implements OnInit {
     this.userNameLink = this.router.snapshot.paramMap.get('login');
     this.dataService.getUserData(this.userNameLink).subscribe((data) => {
       this.showUserDetails = true;
+
+      if (data.login === 'null') {
+        this.showUserDetails = false;
+        return;
+      }
       this.userData = data;
+      console.log(data);
     });
   }
 }
