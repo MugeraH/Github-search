@@ -13,16 +13,36 @@ export class GithubDataService {
 
   constructor(private http: HttpClient) {}
 
-  getUserData(username: string): Observable<any> {
-    return this.http.get(
-      //  `https://api.github.com/users/${username}?access_token=${this.token}`
-      `https://api.github.com/users/${username}`
-    );
+  //   let promise = new Promise((resolve,reject)=>{
+  //     this.users = [];
+  //     this.http.get<ApiResponse>(searchEndpoint).toPromise().then(
+  //       (results)=>{
+  //       this.users.push(results);
+  //       console.log(results)
+  //       resolve();
+  //     },error=>{
+
+  //       reject(error);
+  //     }
+  //     )
+  //   })
+  //   return promise;
+  // }
+
+  getUserData(username: string) {
+    return this.http
+      .get<Users>(
+        //  `https://api.github.com/users/${username}?access_token=${this.token}`
+        `https://api.github.com/users/${username}`
+      )
+      .toPromise();
   }
 
-  getRepoData(username: string): Observable<any> {
-    return this.http.get(
-      ` https://api.github.com/users/${username}/repos?order=created&sort=asc?access_token=${this.token}`
-    );
+  getRepoData(username: string) {
+    return this.http
+      .get<Repo[]>(
+        ` https://api.github.com/users/${username}/repos?order=created&sort=asc?access_token=${this.token}`
+      )
+      .toPromise();
   }
 }

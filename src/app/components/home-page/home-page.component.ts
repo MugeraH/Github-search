@@ -18,15 +18,15 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {}
 
   getUserData() {
-    this.dataService.getUserData(this.searchTerm).subscribe((data) => {
-      this.userData = data;
+    this.dataService.getUserData(this.searchTerm).then((data) => {
+      this.userData = data; 
       this.router.navigate(['/searchUser', this.userData.login]);
     });
   }
-  getUserRepoData() {
-    this.dataService.getRepoData(this.searchTerm).subscribe((data) => {
-      this.userRepoData = data;
-      console.log(this.userRepoData);
-    });
-  }
+  // getUserRepoData() {
+  //   this.dataService.getRepoData(this.searchTerm).then((data) => {
+  //     this.userRepoData = data;
+  //     console.log(this.userRepoData);
+  //   });
+  // }
 }

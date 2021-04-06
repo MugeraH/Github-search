@@ -15,7 +15,7 @@ export class GithubUserRepoDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   getUserData() {
-    this.dataService.getRepoData(this.userName).subscribe((data) => {
+    this.dataService.getRepoData(this.userName).then((data) => {
       this.repoData = data;
     });
   }

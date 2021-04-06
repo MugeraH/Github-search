@@ -24,31 +24,13 @@ export class DateCountPipe implements PipeTransform {
         counter = Math.floor(seconds / intervals[i]);
         if (counter > 0)
           if (counter === 1) {
-            return counter + ' ' + i + ' ago'; // singular (1 day ago)
+            return counter + ' ' + i + ' old'; // singular (1 day ago)
           } else {
-            return counter + ' ' + i + 's ago'; // plural (2 days ago)
+            return counter + ' ' + i + 's old'; // plural (2 days ago)
           }
       }
     }
     return value;
   }
-  // transform(value: any): number {
-  //   let created_at: Date = new Date();
-  //   let created_atWithNoTime: any = new Date(
-  //     created_at.getFullYear(),
-  //     created_at.getMonth(),
-  //     created_at.getDate()
-  //   );
-  //   var dateDifference = Math.abs(created_atWithNoTime - value);
-  //   const secondsInADay = 86400;
 
-  //   var dateDifferenceSeconds = dateDifference * 0.001;
-  //   var dateCounter = dateDifferenceSeconds / secondsInADay;
-
-  //   if (dateCounter >= 1 && created_atWithNoTime > value) {
-  //     return dateCounter;
-  //   } else {
-  //     return 0;
-  //   }
-  // }
 }

@@ -20,7 +20,7 @@ export class GithubUserDetailsComponent implements OnInit {
 
   getUserData() {
     this.showUserDetails = true;
-    this.dataService.getUserData(this.userName).subscribe((data) => {
+    this.dataService.getUserData(this.userName).then((data) => {
       this.userData = data;
       console.log(data.login);
     });
@@ -28,7 +28,7 @@ export class GithubUserDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.userNameLink = this.router.snapshot.paramMap.get('login');
-    this.dataService.getUserData(this.userNameLink).subscribe((data) => {
+    this.dataService.getUserData(this.userNameLink).then((data) => {
       this.showUserDetails = true;
 
       if (data.login === 'null') {
