@@ -45,7 +45,6 @@ form .searchBtn {
   margin-top: 100px;
   display: flex;
   justify-content: space-between;
-  /* background-color: blue; */
 }
 
 .user-details-wrapper .avatar {
@@ -75,7 +74,7 @@ form .searchBtn {
 .user_bio {
   margin: 15px 0px;
   color: white;
-  line-height: 15px;
+  line-height: 19px;
   font-size: 18px;
 }
 
@@ -118,4 +117,22 @@ form .searchBtn {
 .repoData span {
   color: #fff;
   font-size: 18px;
+}
+
+@media screen and (max-width: 600px) {
+  .user-details-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  form {
+    width: 100%;
+  }
+  form input{
+    width: 300px;
+  }
+  .searchBtn {
+    margin-top: 5px;
+  }
 }
