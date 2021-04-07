@@ -13,7 +13,6 @@ export class GithubUserRepoDetailsComponent implements OnInit {
   isDataError: boolean = false;
   repoData: Repo[];
   arrayData: any;
-
   isLoading: boolean = false;
   constructor(private dataService: GithubDataService) {}
 
@@ -27,10 +26,10 @@ export class GithubUserRepoDetailsComponent implements OnInit {
     if (this.searchTerm === '') {
       this.isLoading = false;
       this.isError = true;
-
       return;
     }
 
+    this.isLoading = true;
     this.dataService.getRepoData(this.searchTerm).then((data) => {
       this.isLoading = false;
 
