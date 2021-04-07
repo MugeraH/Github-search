@@ -8,7 +8,7 @@ import { Repo } from '../../repo';
   styleUrls: ['./github-user-repo-details.component.css'],
 })
 export class GithubUserRepoDetailsComponent implements OnInit {
-  searchTerm: string = 'pizza';
+  searchTerm: string = '';
   isError: boolean = false;
   isDataError: boolean = false;
   repoData: Repo[];
@@ -38,13 +38,12 @@ export class GithubUserRepoDetailsComponent implements OnInit {
 
       let convertRepositoryData =
         repositoryData[Object.keys(repositoryData)[1]];
-    
+
       if (convertRepositoryData.length == 0) {
         this.isDataError = true;
         return;
       }
       this.repoData = convertRepositoryData;
-  
     });
     this.searchTerm = '';
   }
