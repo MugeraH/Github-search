@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Users } from '../../users';
 import { ActivatedRoute } from '@angular/router';
 import { GithubDataService } from '../../services/github-data.service';
+import { Repo } from 'src/app/repo';
 
 @Component({
   selector: 'app-github-user-details',
@@ -14,6 +15,7 @@ export class GithubUserDetailsComponent implements OnInit {
   userNameLink: any = 'mugerah';
   userData: Users;
   showUserDetails: boolean = false;
+  repoData: Repo[];
 
   isLoading: boolean = true;
   constructor(
@@ -35,6 +37,10 @@ export class GithubUserDetailsComponent implements OnInit {
       this.userData = data;
       console.log(data.login);
     });
+
+    this.dataService.getUserRepoData(this.userName).then((data) => {
+      this.repoData = data;
+    });
     this.userName = '';
   }
 
@@ -55,7 +61,11 @@ export class GithubUserDetailsComponent implements OnInit {
       }
 
       this.userData = data;
+      this.dataService.getUserRepoData(this.userNameLink).then((data) => {
+        this.repoData = data;
+      });
       this.isLoading = false;
+
       this.userName = '';
 
       console.log(data);

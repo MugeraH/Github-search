@@ -8,18 +8,21 @@
         #searchForm="ngForm"
         (ngSubmit)="searchForm.form.valid && getUserData()"
       >
-        <div class="input-group mb-3">
+        <div class="input-group">
           <input
             type="text"
             class=""
             placeholder="Search Repositories"
-            [(ngModel)]="userName"
-            name="userName"
+            [(ngModel)]="searchTerm"
+            name="searchTerm"
           />
 
           <button class="btn searchBtn">Search</button>
         </div>
-        <span class="error" *ngIf="isError" >Please enter username</span>
+        <span class="error" *ngIf="isError">Please enter repository name </span>
+        <span class="error" *ngIf="isDataError"
+          >Can not find repository name
+        </span>
       </form>
     </div>
 
@@ -36,6 +39,7 @@
               {{ repo.description }}
             </p>
           </div>
+
           <div class="repo_info">
             <div class="info">
               <img src="../../../assets/img/star.svg" alt="" />
@@ -50,9 +54,20 @@
               <span>{{ repo.language }}</span>
             </div>
           </div>
+          <div class="repo_owner">
+            <h6>Owner:</h6>
+            <span class="user-info">
+              <a
+                href="{{ repo.owner.html_url }}"
+              
+              >
+                {{ repo.owner.login }}</a
+              >
+            </span>
+          </div>
           <div class="repo_date-info">
             <div class="date">{{ repo.created_at | dateCount }}</div>
-            <a class="btn searchRepoBtn" href="{{ repo.html_url }}">Visit</a>
+            <a class="btn searchRepoBtn" href="{{ repo.html_url }}">View</a>
           </div>
         </div>
       </div>

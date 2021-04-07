@@ -4,6 +4,23 @@
   padding-bottom: 20px;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff0000 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  border-radius: 20px;
+  border: transparent;
+}
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +31,7 @@
 .repo_wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+
   justify-content: space-between;
   margin-top: 80px;
 }
@@ -25,7 +42,7 @@
   border-radius: 5px;
   padding: 15px;
   color: #fff;
-  width: 330px;
+  width: 350px;
   margin-right: 10px;
 }
 
@@ -72,12 +89,37 @@ form .searchBtn {
 .repo_description {
   font-size: 16px;
   padding-bottom: 10px;
-  height: 200px;
+  height: 100px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .repo_info {
   margin: 20px 0px;
   display: flex;
+}
+
+.repo_owner {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.repo_owner h6 {
+  margin-top: 2px;
+}
+.repo_owner span {
+  text-transform: capitalize;
+  margin-left: 5px;
+}
+
+.repo_owner span a {
+  text-decoration: none;
+  padding: 5px;
+  color: #ff0000;
+}
+.repo_owner span a:hover {
+  color: #fff;
+  background-color: #ff0000;
 }
 
 .repo_info .info {
@@ -95,7 +137,7 @@ form .searchBtn {
 
 .repo_date-info {
   font-size: 17px;
-  margin: 25px 0px 5px 0px;
+  margin: 10px 0px 5px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;

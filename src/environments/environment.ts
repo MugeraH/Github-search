@@ -23,3 +23,7 @@ export const environment = {
 // https://api.github.com/users/mugerah?access_token=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
 
 // https://api.github.com/users/mugerah/repos?order=created&sort=asc?access_token=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
+
+  // https://api.github.com/search/repositories?q=pizza?order=created&sort=asc?acess_token=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/page=1&per_page=100
+
+  // `https://api.github.com/search/repositories?q=${searchterm}?order=created&sort=asc?acess_token=$this.token/page=1&per_page=100`

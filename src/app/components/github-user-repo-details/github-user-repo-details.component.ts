@@ -8,9 +8,11 @@ import { Repo } from '../../repo';
   styleUrls: ['./github-user-repo-details.component.css'],
 })
 export class GithubUserRepoDetailsComponent implements OnInit {
-  userName: string = '';
-  isError:boolean= false
+  searchTerm: string = '';
+  isError: boolean = false;
+  isDataError: boolean = false;
   repoData: Repo[];
+  arrayData: any;
 
   isLoading: boolean = false;
   constructor(private dataService: GithubDataService) {}
@@ -19,17 +21,32 @@ export class GithubUserRepoDetailsComponent implements OnInit {
 
   getUserData() {
     this.isLoading = true;
+    this.isError = false;
+    this.isDataError = false;
 
-    if (this.userName === '') {
+    if (this.searchTerm === '') {
       this.isLoading = false;
-      this.isError= true
+      this.isError = true;
+
+      return;
     }
 
-    this.dataService.getRepoData(this.userName).then((data) => {
+    this.dataService.getRepoData(this.searchTerm).then((data) => {
       this.isLoading = false;
-      this.isError=false
-      this.repoData = data;
+
+      this.arrayData = Object.entries(data);
+
+      let repositoryData = this.arrayData[2];
+      let convertrepositoryData =
+        repositoryData[Object.keys(repositoryData)[1]];
+
+      if (convertrepositoryData.length == 0) {
+        this.isDataError = true;
+        return;
+      }
+      this.repoData = convertrepositoryData;
+      console.log(this.repoData);
     });
-    this.userName = '';
+    this.searchTerm = '';
   }
 }

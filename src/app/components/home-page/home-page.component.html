@@ -14,6 +14,9 @@
       [(ngModel)]="searchTerm"
       name="searchTerm"
     />
+    <span class="error text-center" *ngIf="isError"
+      >Please enter user name
+    </span>
     <button class="btn searchBtn">Search</button>
   </form>
 

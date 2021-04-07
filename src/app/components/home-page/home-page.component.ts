@@ -14,11 +14,17 @@ export class HomePageComponent implements OnInit {
   userRepoData: Users[];
   searchTerm: string = '';
   isLoading: boolean = false;
+  isError: boolean = false;
   constructor(private dataService: GithubDataService, private router: Router) {}
 
   ngOnInit(): void {}
 
   getUserData() {
+    if (this.searchTerm === '') {
+      this.isError = true;
+      return;
+    }
+    this.isError = false;
     this.isLoading = true;
     this.dataService.getUserData(this.searchTerm).then((data) => {
       this.userData = data;
