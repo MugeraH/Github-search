@@ -4,6 +4,10 @@
   padding-bottom: 20px;
 }
 
+.top a{
+  color: red;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #ff0000 transparent;

@@ -1,5 +1,5 @@
 <div class="container">
-  <app-navbar></app-navbar>
+  <app-navbar id="top"></app-navbar>
 
   <div class="wrapper">
     <div class="mt-3">
@@ -8,7 +8,7 @@
         #searchForm="ngForm"
         (ngSubmit)="searchForm.form.valid && getUserData()"
       >
-        <div class="input-group ">
+        <div class="input-group">
           <input
             type="text"
             class=""
@@ -96,6 +96,9 @@
               <a class="btn searchRepoBtn" href="{{ repo.html_url }}">View</a>
             </div>
           </div>
+        </div>
+        <div class="top text-center">
+          <a href="#top">Return to top</a>
         </div>
       </div>
     </div>

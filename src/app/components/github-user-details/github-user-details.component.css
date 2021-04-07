@@ -5,6 +5,17 @@
   flex-direction: column;
 }
 
+.top {
+  margin: 10px auto;
+}
+.top a {
+  color: red;
+  text-decoration: none;
+}
+.top a:hover {
+  color: #fff;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #ff0000 transparent;
@@ -263,6 +274,5 @@ form .searchBtn {
   .repo-wrapper {
     justify-content: center;
     margin-left: 50px;
-  
   }
 }
