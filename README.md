@@ -18,22 +18,26 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Run `ng serve -o` to start application
 
 ## BDD
+
 ### 1.SEARCH GITHUB USER
 
 #### Input
- * Username
+
+- Username
 
 #### Behaviour
 
- A user can search for a github user by writing a username in a form input and submitting the form. Upon submittion the users information and repositories will be displayed on the page.
+A user can search for a github user by writing a username in a form input and submitting the form. Upon submittion the users information and repositories will be displayed on the page.
 
-### 2.SEARCH GITHUB USER REPOSITORIES
+### 2.SEARCH GITHUB REPOSITORIES
 
 #### Input
- * Username
+
+- Repository name
 
 #### Behaviour
-A user can also search for a users repositories by going to the repositories page by clicking search repository link on the navbar which will redirect them to the search repositories page. They will then be required to fill a username in a form input and upon submition the particular user's  repositories will be displayed.
+
+A user can also search for a repositorie by going to the repositories page by clicking search repository link on the navbar which will redirect them to the search repositories page. They will then be required to fill a repository name in a form input and upon submition repositories will be displayed.
 
 ## Technologies Used
 
