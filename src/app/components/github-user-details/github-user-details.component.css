@@ -5,16 +5,6 @@
   flex-direction: column;
 }
 
-.top {
-  margin: 10px auto;
-}
-.top a {
-  color: red;
-  text-decoration: none;
-}
-.top a:hover {
-  color: #fff;
-}
 
 * {
   scrollbar-width: thin;

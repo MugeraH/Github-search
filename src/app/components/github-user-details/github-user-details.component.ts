@@ -35,7 +35,7 @@ export class GithubUserDetailsComponent implements OnInit {
       this.isLoading = false;
       this.isError = false;
       this.userData = data;
-      console.log(data.login);
+      
     });
 
     this.dataService.getUserRepoData(this.userName).then((data) => {
@@ -47,7 +47,6 @@ export class GithubUserDetailsComponent implements OnInit {
   ngOnInit() {
     this.isLoading = true;
     this.userName = 'mugerah';
-
     this.userNameLink = this.router.snapshot.paramMap.get('login');
 
     this.dataService.getUserData(this.userNameLink).then((data) => {
@@ -65,10 +64,9 @@ export class GithubUserDetailsComponent implements OnInit {
         this.repoData = data;
       });
       this.isLoading = false;
-
       this.userName = '';
 
-      console.log(data);
+  
     });
   }
 }

@@ -8,7 +8,7 @@ import { Repo } from '../../repo';
   styleUrls: ['./github-user-repo-details.component.css'],
 })
 export class GithubUserRepoDetailsComponent implements OnInit {
-  searchTerm: string = '';
+  searchTerm: string = 'pizza';
   isError: boolean = false;
   isDataError: boolean = false;
   repoData: Repo[];
@@ -30,21 +30,21 @@ export class GithubUserRepoDetailsComponent implements OnInit {
     }
 
     this.isLoading = true;
+
     this.dataService.getRepoData(this.searchTerm).then((data) => {
       this.isLoading = false;
-
       this.arrayData = Object.entries(data);
-
       let repositoryData = this.arrayData[2];
-      let convertrepositoryData =
-        repositoryData[Object.keys(repositoryData)[1]];
 
-      if (convertrepositoryData.length == 0) {
+      let convertRepositoryData =
+        repositoryData[Object.keys(repositoryData)[1]];
+    
+      if (convertRepositoryData.length == 0) {
         this.isDataError = true;
         return;
       }
-      this.repoData = convertrepositoryData;
-      console.log(this.repoData);
+      this.repoData = convertRepositoryData;
+  
     });
     this.searchTerm = '';
   }
